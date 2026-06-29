@@ -1,0 +1,278 @@
+@import "tailwindcss";
+@import "@fontsource-variable/space-grotesk";
+@import "@fontsource-variable/plus-jakarta-sans";
+@import "@fontsource-variable/jetbrains-mono";
+
+/* ------------------------------------------------------------------ */
+/* Dark mode variant — toggled by `.dark` class on <html> (next-themes) */
+/* ------------------------------------------------------------------ */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ------------------------------------------------------------------ */
+/* Theme tokens                                                         */
+/* ------------------------------------------------------------------ */
+:root {
+  color-scheme: light;
+
+  /* Surfaces */
+  --background: #f6f7fb;
+  --surface: #ffffff;
+  --surface-2: #eef1f7;
+  --overlay: #0b1120;
+
+  /* Text */
+  /* --foreground: #0b1120; */
+  --foreground: #585858;
+  --muted: #5b6478;
+
+  /* Structure */
+  --border: #e2e6ef;
+  --border-strong: #cdd3e1;
+
+  /* Accent used for links / icons / focus rings directly on background */
+  --accent: #2f46d6;
+  --accent-foreground: #ffffff;
+
+  /* Signature gradient endpoints (tuned per-theme for contrast) */
+  --gradient-from: #2f46d6;
+  --gradient-to: #0b7aae;
+
+  /* Brand "vivid" palette — used on colored surfaces (buttons, tiles, badges) */
+  --signal: #3d5afe;
+  --circuit: #22d3ee;
+  --amber: #ffb347;
+  --violet: #8b7cf6;
+
+  --shadow-color: 15 23 42;
+}
+
+.dark {
+  color-scheme: dark;
+
+  --background: #0a0e17;
+  --surface: #131826;
+  --surface-2: #1b2233;
+  --overlay: #05070d;
+
+  --foreground: #f4f6fb;
+  --muted: #98a2b8;
+
+  --border: #232b3d;
+  --border-strong: #303a52;
+
+  --accent: #7c9cff;
+  --accent-foreground: #0b1120;
+
+  --gradient-from: #6e8bff;
+  --gradient-to: #22d3ee;
+
+  --signal: #5b78ff;
+  --circuit: #22d3ee;
+  --amber: #ffb347;
+  --violet: #9d8cff;
+
+  --shadow-color: 0 0 0;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-overlay: var(--overlay);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-signal: var(--signal);
+  --color-circuit: var(--circuit);
+  --color-amber: var(--amber);
+  --color-violet: var(--violet);
+
+  --color-gradient-from: var(--gradient-from);
+  --color-gradient-to: var(--gradient-to);
+
+  --font-sans: "Plus Jakarta Sans Variable", "Plus Jakarta Sans", ui-sans-serif,
+    system-ui, sans-serif;
+  --font-display: "Space Grotesk Variable", "Space Grotesk", ui-sans-serif,
+    system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", "JetBrains Mono", ui-monospace,
+    SFMono-Regular, monospace;
+
+  --animate-pulse-soft: pulse-soft 2.6s ease-in-out infinite;
+  --animate-float: float-y 7s ease-in-out infinite;
+  --animate-float-delayed: float-y 7s ease-in-out infinite 1.4s;
+  --animate-flow: flow-dash 1.2s linear infinite;
+  --animate-spin-slow: spin 14s linear infinite;
+  --animate-fade-up: fade-up 0.7s ease-out forwards;
+}
+
+/* ------------------------------------------------------------------ */
+/* Keyframes                                                            */
+/* ------------------------------------------------------------------ */
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(0.94);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes flow-dash {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Base layer                                                           */
+/* ------------------------------------------------------------------ */
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "ss01" 1, "cv01" 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display;
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background-color: var(--accent);
+    color: var(--accent-foreground);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  html {
+    scrollbar-color: var(--border-strong) transparent;
+    scrollbar-width: thin;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--border-strong);
+    border-radius: 999px;
+    border: 2px solid var(--background);
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Shared utilities                                                     */
+/* ------------------------------------------------------------------ */
+@layer utilities {
+  .text-gradient {
+    background-image: linear-gradient(
+      120deg,
+      var(--gradient-from),
+      var(--gradient-to)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .bg-dot-grid {
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      var(--border-strong) 1px,
+      transparent 0
+    );
+    background-size: 28px 28px;
+  }
+
+  .mask-fade-edges {
+    mask-image: radial-gradient(
+      ellipse 80% 65% at 50% 35%,
+      black 45%,
+      transparent 100%
+    );
+  }
+
+  .mask-fade-bottom {
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  }
+
+  .glow-signal {
+    box-shadow:
+      0 0 0 1px var(--border),
+      0 24px 48px -24px color-mix(in srgb, var(--signal) 45%, transparent);
+  }
+
+  .card-surface {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Reduced motion                                                       */
+/* ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
