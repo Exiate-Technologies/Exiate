@@ -3,7 +3,7 @@
 import { AnimateIn } from "@/components/AnimateIn";
 
 const STATS = [
-  { value: "3", label: "Products in Development" },
+  { value: "4", label: "Products in Development" },
   { value: "5+", label: "Platforms Supported" },
   { value: "2025", label: "Founded" },
 ];
