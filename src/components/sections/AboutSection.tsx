@@ -45,13 +45,21 @@ const CODE_LINES = [
   {
     num: 6,
     tokens: [
+      { text: '    "talk"', color: "#ffb347" },
+      { text: ",     ", color: "#f4f6fb" },
+      { text: "// LocalTalk LAN messenger", color: "#4b5563" },
+    ],
+  },
+  {
+    num: 7,
+    tokens: [
       { text: '    "trade"', color: "#ffb347" },
       { text: ",    ", color: "#f4f6fb" },
       { text: "// ExiateTrade simulator", color: "#4b5563" },
     ],
   },
   {
-    num: 7,
+    num: 8,
     tokens: [
       { text: '    "dukaanos"', color: "#ffb347" },
       { text: ", ", color: "#f4f6fb" },
@@ -59,19 +67,19 @@ const CODE_LINES = [
     ],
   },
   {
-    num: 8,
+    num: 9,
     tokens: [{ text: "  ],", color: "#f4f6fb" }],
   },
-  { num: 9, tokens: [{ text: "", color: "" }] },
+  { num: 10, tokens: [{ text: "", color: "" }] },
   {
-    num: 10,
+    num: 11,
     tokens: [
       { text: "  stack", color: "#22d3ee" },
       { text: ": {", color: "#f4f6fb" },
     ],
   },
   {
-    num: 11,
+    num: 12,
     tokens: [
       { text: "    frontend", color: "#22d3ee" },
       { text: ": [", color: "#f4f6fb" },
@@ -84,7 +92,7 @@ const CODE_LINES = [
     ],
   },
   {
-    num: 12,
+    num: 13,
     tokens: [
       { text: "    backend", color: "#22d3ee" },
       { text: ":  [", color: "#f4f6fb" },
@@ -99,7 +107,7 @@ const CODE_LINES = [
     ],
   },
   {
-    num: 13,
+    num: 14,
     tokens: [
       { text: "    mobile", color: "#22d3ee" },
       { text: ":   [", color: "#f4f6fb" },
@@ -108,7 +116,7 @@ const CODE_LINES = [
     ],
   },
   {
-    num: 14,
+    num: 15,
     tokens: [
       { text: "    ai", color: "#22d3ee" },
       { text: ":       [", color: "#f4f6fb" },
@@ -121,12 +129,12 @@ const CODE_LINES = [
     ],
   },
   {
-    num: 15,
+    num: 16,
     tokens: [{ text: "  },", color: "#f4f6fb" }],
   },
-  { num: 16, tokens: [{ text: "", color: "" }] },
+  { num: 17, tokens: [{ text: "", color: "" }] },
   {
-    num: 17,
+    num: 18,
     tokens: [
       { text: "  privacy", color: "#22d3ee" },
       { text: ': "', color: "#f4f6fb" },
@@ -136,7 +144,7 @@ const CODE_LINES = [
     ],
   },
   {
-    num: 18,
+    num: 19,
     tokens: [{ text: "})", color: "#f4f6fb" }],
   },
 ];
