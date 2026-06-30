@@ -180,9 +180,9 @@ export function AboutSection() {
           </div>
 
           {/* ── Right: Code window ───────────── */}
-          <AnimateIn delay={0.12} direction="left" className="w-full">
+          <AnimateIn delay={0.12} direction="left" className="w-full min-w-0">
             <div
-              className="rounded-2xl overflow-hidden font-mono text-sm leading-relaxed"
+              className="w-full rounded-2xl overflow-hidden font-mono text-sm leading-relaxed"
               style={{
                 backgroundColor: "#0d1120",
                 border: "1px solid rgba(91,120,255,0.25)",
