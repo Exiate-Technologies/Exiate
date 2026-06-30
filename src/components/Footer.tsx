@@ -20,6 +20,7 @@ const LINK_GROUPS = [
     label: "Products",
     links: [
       { label: "LocalShare", href: "/products/share" },
+      { label: "LocalTalk", href: "/products/talk" },
       { label: "ExiateTrade", href: "/products/trade" },
       { label: "DukaanOS", href: "/products/dukaanos" },
     ],

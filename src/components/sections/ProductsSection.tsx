@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { ArrowUpRight, Share2, TrendingUp, Store } from "lucide-react";
+import { ArrowUpRight, Share2, TrendingUp, Store, MessageSquare } from "lucide-react";
 import { AnimateIn } from "@/components/AnimateIn";
 import { cn } from "@/lib/utils";
 import type { LucideIcon } from "lucide-react";
@@ -29,6 +29,18 @@ const PRODUCTS: Product[] = [
     accentBg: "rgba(255,179,71,0.1)",
     glowColor: "rgba(255,179,71,0.2)",
     href: "/products/share",
+  },
+  {
+    name: "LocalTalk",
+    tagline: "LAN chat, completely offline",
+    description:
+      "Secure, serverless peer-to-peer LAN messaging. End-to-end encrypted chats, group channels, and high-speed offline file transfers with zero configuration.",
+    Icon: MessageSquare,
+    status: "Available Soon",
+    accentColor: "#10b981",
+    accentBg: "rgba(16,185,129,0.1)",
+    glowColor: "rgba(16,185,129,0.2)",
+    href: "/products/talk",
   },
   {
     name: "ExiateTrade",
@@ -215,7 +227,7 @@ export function ProductsSection() {
         </div>
 
         {/* Product grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-5">
           {PRODUCTS.map((product, i) => (
             <ProductCard key={product.name} product={product} index={i} />
           ))}
