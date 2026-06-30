@@ -74,23 +74,59 @@ const CODE_LINES = [
     num: 11,
     tokens: [
       { text: "    frontend", color: "#22d3ee" },
-      { text: ': "Next.js",', color: "#f4f6fb" },
+      { text: ": [", color: "#f4f6fb" },
+      { text: '"Next.js"', color: "#ffb347" },
+      { text: ", ", color: "#f4f6fb" },
+      { text: '"React.js"', color: "#ffb347" },
+      { text: ", ", color: "#f4f6fb" },
+      { text: '"Figma"', color: "#ffb347" },
+      { text: "],", color: "#f4f6fb" },
     ],
   },
   {
     num: 12,
     tokens: [
-      { text: "    ai", color: "#22d3ee" },
-      { text: ':       "Gemini",', color: "#f4f6fb" },
+      { text: "    backend", color: "#22d3ee" },
+      { text: ":  [", color: "#f4f6fb" },
+      { text: '"Python"', color: "#ffb347" },
+      { text: ", ", color: "#f4f6fb" },
+      { text: '"Nodejs"', color: "#ffb347" },
+      { text: ", ", color: "#f4f6fb" },
+      { text: '".Net Core"', color: "#ffb347" },
+      { text: ", ", color: "#f4f6fb" },
+      { text: '"Nest.js"', color: "#ffb347" },
+      { text: "],", color: "#f4f6fb" },
     ],
   },
   {
     num: 13,
-    tokens: [{ text: "  },", color: "#f4f6fb" }],
+    tokens: [
+      { text: "    mobile", color: "#22d3ee" },
+      { text: ":   [", color: "#f4f6fb" },
+      { text: '"Flutter"', color: "#ffb347" },
+      { text: "],", color: "#f4f6fb" },
+    ],
   },
-  { num: 14, tokens: [{ text: "", color: "" }] },
+  {
+    num: 14,
+    tokens: [
+      { text: "    ai", color: "#22d3ee" },
+      { text: ":       [", color: "#f4f6fb" },
+      { text: '"Claude"', color: "#ffb347" },
+      { text: ", ", color: "#f4f6fb" },
+      { text: '"ChatGPT"', color: "#ffb347" },
+      { text: ", ", color: "#f4f6fb" },
+      { text: '"Gemini"', color: "#ffb347" },
+      { text: "],", color: "#f4f6fb" },
+    ],
+  },
   {
     num: 15,
+    tokens: [{ text: "  },", color: "#f4f6fb" }],
+  },
+  { num: 16, tokens: [{ text: "", color: "" }] },
+  {
+    num: 17,
     tokens: [
       { text: "  privacy", color: "#22d3ee" },
       { text: ': "', color: "#f4f6fb" },
@@ -100,7 +136,7 @@ const CODE_LINES = [
     ],
   },
   {
-    num: 16,
+    num: 18,
     tokens: [{ text: "})", color: "#f4f6fb" }],
   },
 ];
